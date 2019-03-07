@@ -40,7 +40,7 @@ public class SolverGUI extends Application {
 			for (int j = 0; j < 9; j++) {
 				textFields[j] = new OneLetterTextField();
 				if (((2 < j && j < 6) && (i < 3 || i > 5)) || (2 < i && i < 6) && (j < 3 || j > 5)) {
-					textFields[j].setStyle("-fx-control-inner-background: orange; -fx-alignment: center");
+					textFields[j].setStyle("-fx-control-inner-background: orange");
 
 				}
 
