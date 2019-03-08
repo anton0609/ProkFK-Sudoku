@@ -24,7 +24,6 @@ public class SudokuSolver {
 	 * @throws IllegalArgumentException
 	 *             if the sudoku is null, has the wrong dimensions or if the
 	 *             ints in the sudoku is not between 0 and 9
-	 * 
 	 */
 	public SudokuSolver(int[][] sudoku) {
 
@@ -56,7 +55,7 @@ public class SudokuSolver {
 		} else {
 			return false;
 		}
-
+		
 	}
 
 	/**
@@ -80,15 +79,15 @@ public class SudokuSolver {
 
 		if (sudokuGrid[r][c] == 0) {
 			for (int i = 1; i <= 9; i++) {
-				boolean works = followsRules(r, c, i);
+				
 
-				if (!works) {
+				if (!followsRules(r, c, i)) {
 					continue;
 				} else {
 					sudokuGrid[r][c] = i;
 				}
 				if (!solve(r + 1, c)) {
-					sudokuGrid[r][c] = 0;
+//					sudokuGrid[r][c] = 0;
 					continue;
 				} else {
 					return true;
@@ -179,7 +178,6 @@ public class SudokuSolver {
 	 * 
 	 * @throws IllegalArgumentException
 	 *             if value is not between 0 and 9
-	 * 
 	 */
 	public void setGridValue(int r, int c, int value) {
 		if (0 <= value && value <= 9 && 0 <= r && r <= 8 && 0 <= c && c <= 8) {
